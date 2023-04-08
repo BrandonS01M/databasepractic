@@ -1,9 +1,7 @@
 package com.basedatos.basededatos.services;
 
-import com.basedatos.basededatos.dao.MarkerDao;
-import com.basedatos.basededatos.dao.ProducerDao;
+import com.basedatos.basededatos.dao.MakerDao;
 import com.basedatos.basededatos.models.MakerModel;
-import com.basedatos.basededatos.models.ProducerModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,28 +9,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 @Service
-public class MarkerService {
+public class MakerService {
     @Autowired
-    MarkerDao markerDao;
+    MakerDao makerDao;
 
     public List<MakerModel> getAll(){
-        return markerDao.getAll();
+        return makerDao.getAll();
     }
 
-    public MakerModel get( long id){
+    public MakerModel get(long id){
 
-        return markerDao.get(id);
+        return makerDao.get(id);
     }
 
-    public MakerModel register( MakerModel makerModel){
-        return markerDao.register(makerModel);
+    public MakerModel register(MakerModel makerModel){
+        return makerDao.register(makerModel);
     }
 
     public MakerModel update(@RequestBody MakerModel makerModel){
-        return markerDao.update(makerModel);
+        return makerDao.update(makerModel);
     }
 
     public void delete(@PathVariable long id){
-        markerDao.delete(id);
+        makerDao.delete(id);
     }
 }

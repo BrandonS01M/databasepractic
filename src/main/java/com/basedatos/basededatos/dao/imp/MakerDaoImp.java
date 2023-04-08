@@ -1,8 +1,7 @@
 package com.basedatos.basededatos.dao.imp;
 
-import com.basedatos.basededatos.dao.MarkerDao;
+import com.basedatos.basededatos.dao.MakerDao;
 import com.basedatos.basededatos.models.MakerModel;
-import com.basedatos.basededatos.models.UserModel;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -12,7 +11,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class MarkerDaoImp implements MarkerDao {
+public class MakerDaoImp implements MakerDao {
 
 
     @PersistenceContext
@@ -25,19 +24,19 @@ public class MarkerDaoImp implements MarkerDao {
     }
     @Transactional
     @Override
-    public MakerModel get( long id){
+    public MakerModel get(long id){
         return entityManager.find(MakerModel.class, id);
 
     }
     @Transactional
     @Override
-    public MakerModel register( MakerModel makerModel){
+    public MakerModel register(MakerModel makerModel){
         entityManager.merge(makerModel);
         return makerModel;
     }
     @Transactional
     @Override
-    public MakerModel update( MakerModel makerModel){
+    public MakerModel update(MakerModel makerModel){
         entityManager.merge(makerModel);
         return makerModel;
     }
