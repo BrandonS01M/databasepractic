@@ -4,10 +4,12 @@ import com.basedatos.basededatos.dao.MakerDao;
 import com.basedatos.basededatos.models.MakerModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+@CrossOrigin
 @Service
 public class MakerService {
     @Autowired
